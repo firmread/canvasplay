@@ -1,0 +1,49 @@
+<html>
+<head>
+  <title>Canvas tutorial</title>
+
+
+
+  <!-- script-->
+  <script type="application/javascript">
+    function draw() {
+      var canvas = document.getElementById('canvas');
+      if (canvas.getContext){
+        var ctx = canvas.getContext('2d');
+        // lineTo(x, y)
+        // Draws a line from the current drawing position to the position specified by x and y.
+
+        // Filled triangle
+        ctx.beginPath();
+        ctx.moveTo(25,25);
+        ctx.lineTo(105,25);
+        ctx.lineTo(25,105);
+        ctx.fill();
+
+        // Stroked triangle
+        ctx.beginPath();
+        ctx.moveTo(125,125);
+        ctx.lineTo(125,45);
+        ctx.lineTo(45,125);
+        ctx.closePath();
+        ctx.stroke();
+      }
+    }
+  </script>
+
+
+
+  <!--style-->
+  <style type="text/css">
+  canvas { border: 1px solid black; }
+  </style>
+
+
+
+</head>
+<body onload="draw();">
+
+  <canvas id="canvas" width="150" height="150"></canvas>
+
+</body>
+</html>
